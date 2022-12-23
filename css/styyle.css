@@ -38,51 +38,11 @@ header .container {
     padding: 10px;
 }
 
-.fa-bars {
-    font-size: 2rem;
-    margin-top: 10px;
-    color: var(--LTH-COLOR);
-}
-
-:is(header:hover, header:focus-within) .fa-bars {
-    color: var(--ORG-COLOR);
-    transform: rotate(360deg) translate(27px);
-    transition: all 0.2s ease-in-out;
-}
-
-:is(header:hover, header:focus-within) nav {
-    display: block;
-}
-
-nav {
-    display: none;
-    transform-origin: top center;
-    /* animation: showmenu 0.2s ease-in-out forwards 0.2s; */
-    animation-name: showmenu;
-    animation-timing-function: ease-in-out;
-    animation-duration: 0.2s;
-    animation-fill-mode: forwards;
-}
-
-@keyframes showmenu {
-    0% {
-        transform: scaley(0);
-    }
-
-    80% {
-        transform: scaley(1.2);
-    }
-
-    100% {
-        transform: scaley(1);
-    }
-}
-
 ul {
     list-style: none;
     text-transform: uppercase;
+    display: flex;
     margin-top: 15px;
-    line-height: 2;
 }
 
 .company h1 {
@@ -96,7 +56,6 @@ ul {
 }
 
 li a {
-    font-size: 15px;
     text-decoration: none;
     color: black;
     margin-left: 20px;
@@ -105,7 +64,7 @@ li a {
 
 li a:hover, a:focus {
     color: var(--ORG-COLOR);
-    /* font-weight: bold; */
+    font-weight: bold;
 }
 
 #showcase {
@@ -328,15 +287,10 @@ footer p {
     color: var(--ORG-COLOR);
 }
 
-.fa-user {
-    color: white;
-    font-size: 2rem;
-} 
-
 @media (max-width: 768px) {
-    /* header .container {
+    header .container {
         display: block;
-    } */
+    }
 
     header .container .nav {
         display: flex;
