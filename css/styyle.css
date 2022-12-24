@@ -38,11 +38,51 @@ header .container {
     padding: 10px;
 }
 
+.fa-bars {
+    font-size: 2rem;
+    margin-top: 10px;
+    color: var(--LTH-COLOR);
+}
+
+:is(header:hover, header:focus-within) .fa-bars {
+    color: var(--ORG-COLOR);
+    transform: rotate(360deg) translate(27px);
+    transition: all 0.2s ease-in-out;
+}
+
+:is(header:hover, header:focus-within) nav {
+    display: block;
+}
+
+nav {
+    display: none;
+    transform-origin: top center;
+    /* animation: showmenu 0.2s ease-in-out forwards 0.2s; */
+    animation-name: showmenu;
+    animation-timing-function: ease-in-out;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes showmenu {
+    0% {
+        transform: scaley(0);
+    }
+
+    80% {
+        transform: scaley(1.2);
+    }
+
+    100% {
+        transform: scaley(1);
+    }
+}
+
 ul {
     list-style: none;
     text-transform: uppercase;
-    display: flex;
     margin-top: 15px;
+    line-height: 2;
 }
 
 .company h1 {
@@ -51,11 +91,16 @@ ul {
     flex-flow: row nowrap;
 }
 
+/* .nowrap {
+    white-space: nowrap;
+} */
+
 .current {
     color: var(--ORG-COLOR);
 }
 
 li a {
+    font-size: 15px;
     text-decoration: none;
     color: black;
     margin-left: 20px;
@@ -64,7 +109,7 @@ li a {
 
 li a:hover, a:focus {
     color: var(--ORG-COLOR);
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 
 #showcase {
@@ -274,6 +319,10 @@ footer p {
     color: var(--LTH-COLOR);
 }
 
+.login__container button:hover {
+    opacity: 0.8;
+}
+
 .login__container p {
     margin-top: 20px;
 }
@@ -287,10 +336,15 @@ footer p {
     color: var(--ORG-COLOR);
 }
 
+.fa-user {
+    color: white;
+    font-size: 2rem;
+} 
+
 @media (max-width: 768px) {
-    header .container {
+    /* header .container {
         display: block;
-    }
+    } */
 
     header .container .nav {
         display: flex;
@@ -338,6 +392,26 @@ footer p {
         width: 100%;
     }
 }
+
+@media (max-width: 320px) {
+    .company h1 {
+        font-size: 1.5rem;
+    }
+
+    .sidebar {
+        margin-right: px;
+    }
+} 
+@media (max-width: 370px) {
+    .company h1 {
+        font-size: 1.5rem;
+        margin-top: 10px;
+    }
+
+    .sidebar {
+        margin: 0 auto;
+    }
+} 
 
 /* @media (max-width: 320px) {
     header .container {
